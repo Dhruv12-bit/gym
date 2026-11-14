@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0B0F1A">
+  <title>Gym Management & Member Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="phone">
+    <!-- Authenticated Top Header (Locked to Logged-In User's Role) -->
+    <header id="topbar" class="topbar" hidden>
+      <div class="rw sp">
+        <div id="brand-logo" class="av sm-av fill">FC</div>
+        <div class="sp">
+          <b id="brand-title" class="brand-title">FitCore Gym</b>
+          <span id="user-badge" class="role-sub">Member Portal</span>
+        </div>
+      </div>
+      <button class="t r" data-act="logout" title="Sign out of current portal">Sign Out</button>
+    </header>
+
+    <!-- Simulated Incoming SMS OTP Banner -->
+    <div id="sms-banner" class="sms-banner" hidden data-act="autofillOtp">
+      <div class="av sm-av fill">💬</div>
+      <div class="sp">
+        <b>MESSAGES • NOW</b>
+        <div class="m" id="sms-text">Your verification code is 4829. Tap to auto-fill.</div>
+      </div>
+      <span class="t g">Auto-fill</span>
+    </div>
+
+    <!-- Main Dynamic Screen -->
+    <main id="screen"></main>
+
+    <!-- Role-Locked Bottom Navigation -->
+    <nav id="nav" class="nv" hidden aria-label="Primary Navigation"></nav>
+
+    <!-- Interactive Modal Sheet -->
+    <div id="modal" class="modal-backdrop" hidden>
+      <div id="modal-body" class="modal-sheet"></div>
+    </div>
+
+    <!-- Status Toast -->
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+
+  <!-- Firebase App & Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  
+  <script src="app.js"></script>
+</body>
+</html>
